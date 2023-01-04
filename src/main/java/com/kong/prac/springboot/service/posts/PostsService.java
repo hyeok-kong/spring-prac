@@ -2,6 +2,7 @@ package com.kong.prac.springboot.service.posts;
 
 import com.kong.prac.springboot.domain.posts.Posts;
 import com.kong.prac.springboot.domain.posts.PostsRepository;
+import com.kong.prac.springboot.web.dto.PostsListResponseDto;
 import com.kong.prac.springboot.web.dto.PostsResponseDto;
 import com.kong.prac.springboot.web.dto.PostsSaveRequestDto;
 import com.kong.prac.springboot.web.dto.PostsUpdateRequestDto;
@@ -9,6 +10,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
@@ -28,6 +31,21 @@ public class PostsService {
         posts.update(requestDto.getTitle(), requestDto.getContent());
 
         return id;
+    }
+
+    @Transactional
+    public List<PostsListResponseDto> findAllDesc() {
+        return postsRepository.findAllDesc().stream()
+                .map(PostsListResponseDto::new)
+                .collect(Collectors.toList());
+    }
+
+    @Transactional
+    public void delete(Long id) {
+        Posts posts = postsRepository.findById(id).orElseThrow(() ->
+                new IllegalArgumentException("해당 게시글이 없습니다. id="+id));
+
+        postsRepository.delete(posts);
     }
 
     public PostsResponseDto findById(Long id) {

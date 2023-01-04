@@ -4,25 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cafdb9e7-54f3-429c-819f-e70b03585af2" name="Changes" comment="downgrade JDK version to 1.8">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/kong/prac/springboot/domain/posts/Posts.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/kong/prac/springboot/domain/posts/PostsRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/kong/prac/springboot/service/posts/PostsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/kong/prac/springboot/web/PostsApiController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/kong/prac/springboot/web/dto/HelloResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/kong/prac/springboot/web/dto/PostsResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/kong/prac/springboot/web/dto/PostsSaveRequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/kong/prac/springboot/web/dto/PostsUpdateRequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/kong/prac/springboot/domain/posts/PostsRepositoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/kong/prac/springboot/dto/HelloResponseDtoTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/kong/prac/springboot/web/PostsApiControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+    <list default="true" id="cafdb9e7-54f3-429c-819f-e70b03585af2" name="Changes" comment="Apply JPA and add create/read/update API&#10;Need 3 classes to make API : Dto, Controller, Service&#10;Dto : receive request data&#10;Controller : recieve API request&#10;Service : Ensure ordering between transactions and domain functions">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/kong/prac/springboot/domain/BaseTimeEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/kong/prac/springboot/web/IndexController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/kong/prac/springboot/web/dto/PostsListResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/app/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/index.mustache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/layout/footer.mustache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/layout/header.mustache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/posts-save.mustache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/posts-update.mustache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/kong/prac/springboot/web/IndexControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kong/prac/springboot/web/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kong/prac/springboot/web/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/kong/prac/springboot/HelloControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/kong/prac/springboot/HelloControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kong/prac/springboot/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kong/prac/springboot/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kong/prac/springboot/domain/posts/Posts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kong/prac/springboot/domain/posts/Posts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kong/prac/springboot/domain/posts/PostsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kong/prac/springboot/domain/posts/PostsRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kong/prac/springboot/service/posts/PostsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kong/prac/springboot/service/posts/PostsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kong/prac/springboot/web/PostsApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kong/prac/springboot/web/PostsApiController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/kong/prac/springboot/domain/posts/PostsRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/kong/prac/springboot/domain/posts/PostsRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +37,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="package-info" />
         <option value="Class" />
       </list>
     </option>
@@ -69,7 +70,7 @@
       <module name="spring-prac.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.kong.prac.springboot.*" />
+          <option name="PATTERN" value="com.kong.prac.springboot.domain.posts.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -77,7 +78,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HelloControllerTest.helloDto_return" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="IndexControllerTest.mainpage_loading" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -90,7 +91,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.kong.prac.springboot.HelloControllerTest.helloDto_return&quot;" />
+            <option value="&quot;com.kong.prac.springboot.web.IndexControllerTest.mainpage_loading&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -146,7 +147,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="PostsRepositoryTest.post_save_load" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PostsRepositoryTest.BaseTimeEntity_register" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -159,7 +160,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.kong.prac.springboot.domain.posts.PostsRepositoryTest.post_save_load&quot;" />
+            <option value="&quot;com.kong.prac.springboot.domain.posts.PostsRepositoryTest.BaseTimeEntity_register&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -171,11 +172,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.IndexControllerTest.mainpage_loading" />
+        <item itemvalue="Gradle.PostsRepositoryTest.BaseTimeEntity_register" />
         <item itemvalue="Application.Application" />
         <item itemvalue="Gradle.PostsApiControllerTest.Posts_update" />
         <item itemvalue="Gradle.PostsApiControllerTest.Posts_register" />
-        <item itemvalue="Gradle.PostsRepositoryTest.post_save_load" />
-        <item itemvalue="Gradle.HelloControllerTest.helloDto_return" />
       </list>
     </recent_temporary>
   </component>
@@ -195,12 +196,20 @@
       <option name="project" value="LOCAL" />
       <updated>1672472337689</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Apply JPA and add create/read/update API&#10;Need 3 classes to make API : Dto, Controller, Service&#10;Dto : receive request data&#10;Controller : recieve API request&#10;Service : Ensure ordering between transactions and domain functions">
+      <created>1672582991451</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1672582991451</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="downgrade JDK version to 1.8" />
-    <option name="LAST_COMMIT_MESSAGE" value="downgrade JDK version to 1.8" />
+    <MESSAGE value="Apply JPA and add create/read/update API&#10;Need 3 classes to make API : Dto, Controller, Service&#10;Dto : receive request data&#10;Controller : recieve API request&#10;Service : Ensure ordering between transactions and domain functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Apply JPA and add create/read/update API&#10;Need 3 classes to make API : Dto, Controller, Service&#10;Dto : receive request data&#10;Controller : recieve API request&#10;Service : Ensure ordering between transactions and domain functions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
